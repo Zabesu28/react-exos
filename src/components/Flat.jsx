@@ -1,7 +1,7 @@
-const Flat = ({ image, name, price }) => {
+const Flat = ({ img, name, price }) => {
     return (
       <div>
-        <img src={image} alt=""/>
+        <img src={img} alt=""/>
         <h2>{name}</h2>
         <h3>Prix : {price} euros</h3>
       </div>
