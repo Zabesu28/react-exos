@@ -1,10 +1,10 @@
-const Flat = ({ img, name, price }) => {
+const Dish = ({ img, name, price }) => {
     return (
       <div>
         <img src={img} alt=""/>
         <h2>{name}</h2>
-        <h3>Prix : {price} euros</h3>
+        <span>Prix : {price} euros</span>
       </div>
     );
 };
-export default Flat;
+export default Dish;
