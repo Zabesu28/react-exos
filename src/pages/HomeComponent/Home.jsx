@@ -12,7 +12,7 @@ function App() {
   
   useEffect(() => {
     setDishes(showNewOnly ? dishes.filter(dish => dish.new) : jsonDishes)
-    }, [showNewOnly]);
+    }, [handleShowNewOnly]);
 
   function handleShowNewOnly(){
     setShowNewOnly(!showNewOnly);
