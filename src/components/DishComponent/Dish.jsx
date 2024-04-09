@@ -10,14 +10,10 @@ const Dish = ({ img, name, price, slug, news }) => {
     <Col>
       <Link to={"plat/" + slug} className="card-link">
         <Card>
-          {news ? (
             <div className="position-relative">
               <Card.Img className="card-img" variant="top" src={img} />
-              <Badge className="corner-block" bg="primary">Nouveau</Badge>
+              {news && <Badge className="corner-block" bg="primary">Nouveau</Badge>}
             </div>
-          ) : (
-            <Card.Img className="card-img" variant="top" src={img} />
-          )}
           <Card.Body>
             <Card.Title>{name}</Card.Title>
             <Card.Text>{price} €</Card.Text>
