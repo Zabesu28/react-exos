@@ -3,6 +3,7 @@ import Home from "./pages/HomeComponent/Home.jsx";
 import Layout from "./components/LayoutComponent/Layout.jsx";
 import { Route, Routes } from "react-router-dom";
 import DishDetails from "./pages/DishDetailsComponent/DishDetails.jsx";
+import NotFound from "./pages/NotFoundComponent/NotFound.jsx"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="plat/:slug" element={<DishDetails />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </main>
