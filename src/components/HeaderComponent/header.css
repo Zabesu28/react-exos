@@ -11,3 +11,7 @@
 .active{
     text-decoration: underline !important;
 }
+
+.ms-auto{
+    gap: 20px;
+}

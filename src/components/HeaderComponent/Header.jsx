@@ -19,8 +19,8 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <NavLink className="reset-navlink" to='/'><Nav.Link href="/">Accueil</Nav.Link></NavLink>
-            <NavLink className="reset-navlink" to='/propos'><Nav.Link href="/propos">A propos</Nav.Link></NavLink>
+            <NavLink className="reset-navlink" to='/'>Accueil</NavLink>
+            <NavLink className="reset-navlink" to='/propos'>A propos</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
