@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "./header.css";
 import logo from '../../assets/images/logo.webp';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
@@ -18,8 +19,8 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="/">Accueil</Nav.Link>
-            <Nav.Link href="#propos">A propos</Nav.Link>
+            <NavLink className="reset-navlink" to='/'><Nav.Link href="/">Accueil</Nav.Link></NavLink>
+            <NavLink className="reset-navlink" to='/propos'><Nav.Link href="/propos">A propos</Nav.Link></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

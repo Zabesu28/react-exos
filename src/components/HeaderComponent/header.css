@@ -2,3 +2,12 @@
     width: 50px;
     height: 50px;
 }
+
+.reset-navlink{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.active{
+    text-decoration: underline !important;
+}
