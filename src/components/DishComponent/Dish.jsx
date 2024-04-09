@@ -11,7 +11,7 @@ const Dish = ({ img, name, price }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>Prix : {price} euros</Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Voir +</Button>
         </Card.Body>
       </Card>
     </Col>
