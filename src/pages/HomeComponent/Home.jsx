@@ -1,6 +1,8 @@
 import Dish from "../../components/DishComponent/Dish";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 
 function App() {
   const dishes = [
@@ -30,10 +32,19 @@ function App() {
     },
   ];
 
+  const [showNewOnly, setShowNewOnly] = useState(false);
+  
+  const filteredDishes = showNewOnly ? dishes.filter(dish => dish.new) : dishes;
+
+  function handleShowNewOnly(){
+    setShowNewOnly(!showNewOnly);
+  }
+
   return (
     <Container className="pt-5 pb-5">
+       <Button onClick={handleShowNewOnly} variant="primary">{showNewOnly ? "Voir tous les plats" : "Nouveautés uniquement"}</Button>
       <Row>
-        {dishes.map((dish) => (
+        {filteredDishes.map((dish) => (
           <Dish
             key={dish.id}
             img={dish.img}

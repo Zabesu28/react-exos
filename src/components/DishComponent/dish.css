@@ -4,10 +4,15 @@
 
 .card-link {
     text-decoration: none !important;
+    
   }
   
   .position-relative {
     position: relative; 
+  }
+
+  .max-width{
+    max-width: 33.3% !important;
   }
   
   .corner-block {
