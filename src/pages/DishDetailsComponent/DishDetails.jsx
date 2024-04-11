@@ -26,7 +26,7 @@ const DishDetails = () => {
         <Container className="pt-5 pb-5 container-details">
           <Row>
             <Col>
-              <img className="card-img" variant="top" src={dish.img} />
+              <img className="card-imgD" variant="top" src={dish.img} />
             </Col>
             <Col>
               <h1>{dish.name}</h1>
