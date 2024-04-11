@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import jsonDishes from "../../datas/dishes.json";
@@ -10,15 +10,10 @@ import Button from "react-bootstrap/Button";
 const DishDetails = () => {
   const { slug } = useParams();
   const [dish, setDish] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    getDishBySlug();
-  }, []);
-
-  function getDishBySlug() {
     setDish(jsonDishes.find((dish) => dish.slug == slug));
-  }
+  }, []);
 
   return (
     <>
