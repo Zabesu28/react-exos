@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useContext } from "react";
 import { CartContext } from "../../utils/context/CartContext";
+import { Helmet } from "react-helmet";
 
 const DishDetails = () => {
   const { slug } = useParams();
@@ -16,10 +17,15 @@ const DishDetails = () => {
 
   useEffect(() => {
     setDish(jsonDishes.find((dish) => dish.slug == slug));
-  }, []);
+  }, [slug]);
 
   return (
     <>
+      {dish && (
+        <Helmet>
+          <title>Détail du plat {dish.name}</title>
+        </Helmet>
+      )}
       {dish ? (
         <Container className="pt-5 pb-5 container-details">
           <Row>
@@ -40,7 +46,7 @@ const DishDetails = () => {
         </Container>
       ) : (
         <Row>
-          <h1>Aucun article n'a été trouvé</h1>
+          <h1>Aucun plat n'a été trouvé</h1>
         </Row>
       )}
     </>
