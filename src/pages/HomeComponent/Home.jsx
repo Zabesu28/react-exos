@@ -11,8 +11,8 @@ function App() {
   const [showNewOnly, setShowNewOnly] = useState(false);
   
   useEffect(() => {
-    setDishes(showNewOnly ? dishes.filter(dish => dish.new) : jsonDishes)
-    }, [handleShowNewOnly]);
+    setDishes(showNewOnly ? jsonDishes.filter(dish => dish.new) : jsonDishes)
+    }, [showNewOnly]);
 
   function handleShowNewOnly(){
     setShowNewOnly(!showNewOnly);
