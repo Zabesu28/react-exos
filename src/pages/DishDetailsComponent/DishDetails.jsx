@@ -32,7 +32,7 @@ const DishDetails = () => {
           </Row>
         </Container>
       ) : <Row>
-        <h1></h1>
+        <h1>Aucun article n'a été trouvé</h1>
         </Row>}
     </>
   );
