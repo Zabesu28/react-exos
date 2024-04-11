@@ -1,0 +1,11 @@
+span{
+    font-weight: bold;
+}
+
+.card-imgD{
+    height: 350px !important;
+}
+
+.container-details{
+    max-width: 1250px !important;
+}
