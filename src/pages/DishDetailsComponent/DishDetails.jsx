@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useContext } from "react";
 import { CartContext } from "../../utils/context/CartContext";
+import { Helmet } from "react-helmet";
 
 const DishDetails = () => {
   const { slug } = useParams();
@@ -20,6 +21,9 @@ const DishDetails = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Détail du plat</title>
+      </Helmet>
       {dish ? (
         <Container className="pt-5 pb-5 container-details">
           <Row>
