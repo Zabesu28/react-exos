@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap";
 const Cart = ({cart}) => {
     console.log(cart)
   return (
-    <Container>
+    <Container className="pt-5 pb-5">
       <h1>Panier</h1>
       <Table striped bordered hover>
         <thead>
@@ -16,7 +16,7 @@ const Cart = ({cart}) => {
         {cart.map((dish, index) => (
             <tr key={index}>
               <td>{dish.name}</td>
-              <td>{dish.price}</td>
+              <td>{dish.price}€</td>
             </tr>
           ))}
         </tbody>
