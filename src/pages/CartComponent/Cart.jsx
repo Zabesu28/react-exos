@@ -24,7 +24,7 @@ const Cart = () => {
           {cart.map((dish, index) => (
             <tr key={index}>
               <td>{dish.name}</td>
-              <td>{dish.price}</td>
+              <td>{dish.price}€</td>
               <td>{dish.quantity}</td>
             </tr>
           ))}
