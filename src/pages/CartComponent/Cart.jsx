@@ -1,9 +1,13 @@
 import { Container, Table } from "react-bootstrap";
 import React, { useContext } from "react";
 import { CartContext } from "../../utils/context/CartContext";
+import useTotCart from "../../utils/hooks/useTotCart";
+import useTotCartPrice from "../../utils/hooks/useTotCartPrice";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
+  const totQty = useTotCart();
+  const totPrice = useTotCartPrice();
 
   return (
     <Container className="pt-5 pb-5">
@@ -20,12 +24,14 @@ const Cart = () => {
           {cart.map((dish, index) => (
             <tr key={index}>
               <td>{dish.name}</td>
-              <td>{dish.price}€</td>
+              <td>{dish.price}</td>
               <td>{dish.quantity}</td>
             </tr>
           ))}
         </tbody>
       </Table>
+      <p>Prix total de la commande : {totPrice}€</p>
+      <p className="text-end">{totQty} éléments dans le panier</p>
     </Container>
   );
 };

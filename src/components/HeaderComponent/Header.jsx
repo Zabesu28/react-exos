@@ -4,19 +4,11 @@ import Navbar from "react-bootstrap/Navbar";
 import styles from "./header.css";
 import logo from '../../assets/images/logo.webp';
 import { NavLink } from 'react-router-dom';
-import { useContext } from "react";
-import { CartContext } from "../../utils/context/CartContext";
+import useTotCart from "../../utils/hooks/useTotCart";
 
 function Header() {
-  const { cart } = useContext(CartContext);
+  const totQty = useTotCart();
 
-  function getQuantity(){
-    let totQt = 0;
-    cart.forEach(dish => {
-      totQt += dish.quantity
-    })
-    return totQt;
-  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -32,7 +24,7 @@ function Header() {
           <Nav className="ms-auto">
             <NavLink className="reset-navlink" to='/'>Accueil</NavLink>
             <NavLink className="reset-navlink" to='/propos'>A propos</NavLink>
-            <NavLink className="reset-navlink" to='/cart'>Panier ({ getQuantity() || 0 })</NavLink>
+            <NavLink className="reset-navlink" to='/cart'>Panier ({ totQty || 0 })</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
