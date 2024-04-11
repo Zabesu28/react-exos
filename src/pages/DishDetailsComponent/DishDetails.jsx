@@ -17,13 +17,15 @@ const DishDetails = () => {
 
   useEffect(() => {
     setDish(jsonDishes.find((dish) => dish.slug == slug));
-  }, []);
+  }, [slug]);
 
   return (
     <>
-      <Helmet>
-        <title>Détail du plat</title>
-      </Helmet>
+      {dish && (
+        <Helmet>
+          <title>Détail du plat {dish.name}</title>
+        </Helmet>
+      )}
       {dish ? (
         <Container className="pt-5 pb-5 container-details">
           <Row>
@@ -44,7 +46,7 @@ const DishDetails = () => {
         </Container>
       ) : (
         <Row>
-          <h1>Aucun article n'a été trouvé</h1>
+          <h1>Aucun plat n'a été trouvé</h1>
         </Row>
       )}
     </>
