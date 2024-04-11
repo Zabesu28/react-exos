@@ -7,7 +7,7 @@ import styles from "./dishDetails.css";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-const DishDetails = () => {
+const DishDetails = ({ addToCart }) => {
   const { slug } = useParams();
   const [dish, setDish] = useState(null);
 
@@ -29,7 +29,9 @@ const DishDetails = () => {
               <p>
                 <span> {dish.price} €</span>
               </p>
-              <Button variant="primary">Commander</Button>
+              <Button variant="primary" onClick={() => addToCart(dish)}>
+                Commander
+              </Button>
             </Col>
           </Row>
         </Container>
