@@ -6,10 +6,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./dishDetails.css";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { useContext } from "react";
+import { CartContext } from "../../utils/context/CartContext";
 
-const DishDetails = ({ addToCart }) => {
+const DishDetails = () => {
   const { slug } = useParams();
   const [dish, setDish] = useState(null);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     setDish(jsonDishes.find((dish) => dish.slug == slug));

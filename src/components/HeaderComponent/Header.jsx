@@ -4,8 +4,11 @@ import Navbar from "react-bootstrap/Navbar";
 import styles from "./header.css";
 import logo from '../../assets/images/logo.webp';
 import { NavLink } from 'react-router-dom';
+import useTotCart from "../../utils/hooks/useTotCart";
 
-function Header({ cart }) {
+function Header() {
+  const totQty = useTotCart();
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -21,7 +24,7 @@ function Header({ cart }) {
           <Nav className="ms-auto">
             <NavLink className="reset-navlink" to='/'>Accueil</NavLink>
             <NavLink className="reset-navlink" to='/propos'>A propos</NavLink>
-            <NavLink className="reset-navlink" to='/cart'>Panier ({ cart.length })</NavLink>
+            <NavLink className="reset-navlink" to='/cart'>Panier ({ totQty || 0 })</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
