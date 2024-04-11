@@ -26,14 +26,18 @@ const DishDetails = () => {
             <Col>
               <h1>{dish.name}</h1>
               <p>{dish.description}</p>
-              <p><span> {dish.price} €</span></p>
-              <Button variant="primary">Commander</Button> 
+              <p>
+                <span> {dish.price} €</span>
+              </p>
+              <Button variant="primary">Commander</Button>
             </Col>
           </Row>
         </Container>
-      ) : <Row>
-        <h1>Aucun article n'a été trouvé</h1>
-        </Row>}
+      ) : (
+        <Row>
+          <h1>Aucun article n'a été trouvé</h1>
+        </Row>
+      )}
     </>
   );
 };
